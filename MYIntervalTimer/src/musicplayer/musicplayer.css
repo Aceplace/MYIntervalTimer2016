@@ -1,0 +1,11 @@
+#selectedSong {
+    -fx-text-fill: red;
+}
+
+#notSelectedSong {
+    -fx-text-fill: inherit;
+}
+
+.button {
+    -fx-background-color: transparent;
+}

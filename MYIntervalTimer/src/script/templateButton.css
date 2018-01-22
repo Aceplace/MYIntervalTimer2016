@@ -1,0 +1,11 @@
+#template.button {
+    -fx-text-fill: red;
+    -fx-background-color: transparent;
+
+}
+
+#template.button:hover {
+    -fx-text-fill: red;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+}
