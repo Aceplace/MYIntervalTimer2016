@@ -59,8 +59,8 @@ public class IntervalTimer {
         }
 
         //load time remaining audio clips
-        //there are 40 total clips all following the same convention "Remainingmmss"
-        for (int halfminutes = 1; halfminutes <= 40; halfminutes++) {
+        //there are 60 total clips all following the same convention "Remainingmmss"
+        for (int halfminutes = 1; halfminutes <= 60; halfminutes++) {
             clipName = "Remaining";
             if (halfminutes / 2 == 0) {
                 clipName += "00";

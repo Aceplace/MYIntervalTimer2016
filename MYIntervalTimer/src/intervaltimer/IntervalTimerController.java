@@ -47,6 +47,7 @@ public class IntervalTimerController extends VBox {
     private Button previousBtn, nextBtn, pauseBtn, restartBtn;
     private Slider intervalTimerVolumeSlider;
     private Slider musicPlayerVolumeSlider;
+    private Button musicPauseBtn;
     private static double volume = 0.8;
     
     private IntervalTimer intervalTimer;
@@ -208,8 +209,26 @@ public class IntervalTimerController extends VBox {
             musicPlayer.setVolumeSlider(newValue.doubleValue());
         });
         
+        
+        iconImage = new Image(ScriptEditorController.class.getClassLoader().getResourceAsStream("resources/icons/play.png"));
+        iconView = new ImageView(iconImage);
+        iconView.setFitHeight(32);
+        iconView.setFitWidth(32);
+        musicPauseBtn = new Button();
+        musicPauseBtn.setOnMouseEntered(e -> {
+            musicPauseBtn.setEffect(new ColorAdjust(0.1, 0, 0.4, 0.2));
+        });
+        musicPauseBtn.setOnMouseExited(e -> {
+            musicPauseBtn.setEffect(null);
+        });
+        musicPauseBtn.setGraphic(iconView);
+        
+        musicPauseBtn.setOnAction(e -> {
+            musicPlayer.pauseMedia();
+        });
+        
         this.getChildren().add(new HBox(previousBtn, restartBtn, pauseBtn, nextBtn, new Label("Timer Volume: "), intervalTimerVolumeSlider,
-                new Label("Music Volume: "), musicPlayerVolumeSlider));
+                new Label("Music Volume: "), musicPlayerVolumeSlider, new Label("Pause/Play Music->"), musicPauseBtn));
 
         /*Label for the time remainging of the timer
         *

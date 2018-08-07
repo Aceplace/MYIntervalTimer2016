@@ -441,8 +441,8 @@ public class ScriptEditorController extends HBox {
         Label periodLabel = new Label();
         Label lengthLabel = new Label("Period Length: ");
         ChoiceBox<Integer> lengthBox = new ChoiceBox();
-        //add values for 2 minute up to 20 minutes into the choice box
-        for (int i = 4; i <= 40; i++) {
+        //add values for 2 minute up to 30 minutes into the choice box
+        for (int i = 4; i <= 60; i++) {
             lengthBox.getItems().add(new Integer(i));
         }
         lengthBox.setConverter(new StringConverter<Integer>() {
@@ -463,7 +463,7 @@ public class ScriptEditorController extends HBox {
                 ScriptEditorController.setMadeChanges(true);
                 period.setLength(newValue);
                 //clear out all annoucements above the stated time and their corresponding checkboxes
-                for (int i = newValue.intValue() + 1; i <= 40; i++) {
+                for (int i = newValue.intValue() + 1; i <= 60; i++) {
                     period.removeAnnouncementTime(i);
                     announceCheckBoxes.get(i - 1).setSelected(false);
                 }
@@ -515,7 +515,7 @@ public class ScriptEditorController extends HBox {
         });
         announceCheckBoxes = FXCollections.observableArrayList();
         CheckBox tempCheckBox;
-        for (int i = 1; i <= 40; i++) {
+        for (int i = 1; i <= 60; i++) {
             tempCheckBox = new CheckBox();
             tempCheckBox.setText(Period.formatHalfMinutes(i));
             tempCheckBox.getProperties().put("halfMinutes", i);

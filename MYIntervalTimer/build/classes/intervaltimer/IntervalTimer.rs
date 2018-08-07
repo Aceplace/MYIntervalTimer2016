@@ -1,4 +1,0 @@
-intervaltimer.IntervalTimer$1
-intervaltimer.AnnouncementType
-intervaltimer.IntervalTimer
-intervaltimer.IntervalTimer$2
